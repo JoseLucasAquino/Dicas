@@ -1,0 +1,25 @@
+version: '2'
+services:
+  server-dicas:
+    container_name: dicas
+    restart: always
+    build: .
+    volumes:
+      - ./dicas:/app
+    links:
+      - db-dicas
+    ports:
+      - 8188:80
+  db-dicas:
+    container_name: dbdicas
+    restart: always
+    image: mysql:5.7
+    ports:
+      - 3309:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: dbsecret
+      MYSQL_DATABASE: dicasauto
+      MYSQL_USER: admindicas
+      MYSQL_PASSWORD: secret
+    volumes:
+      - ./dbdicas:/var/lib/mysql
