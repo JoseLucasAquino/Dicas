@@ -34,7 +34,8 @@ RUN apk --update add --no-cache \
         php7-session \
         php7-tokenizer \
         php7-xml \
-	php7-xmlwriter
+	php7-xmlwriter \
+	php7-fileinfo
 # Limpando o cache das instalações
 # é sempre recomendável remover do
 # container tudo aquilo que não for mais

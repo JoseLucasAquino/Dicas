@@ -10,25 +10,27 @@ class Clue extends Model
     use HasFactory;
 
     protected $fillable = ['description', 'user_id', 'type_id', 'brand_id', 'vehiclemodel_id', 'version_id'];
+    public $labels = ['Descrição', 'Usuário', 'Tipo', 'Marca', 'Modelo', 'Versão'];
+    public $visible = ['description', 'user', 'type', 'brand', 'vehiclemodel', 'version'];
 
     public function user(){
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function type(){
-        return $this->hasOne(Type::class);
+        return $this->belongsTo(Type::class);
     }
 
     public function brand(){
-        return $this->hasOne(Brand::class);
+        return $this->belongsTo(Brand::class);
     }
 
     public function vehiclemodel(){
-        return $this->hasOne(VehicleModel::class);
+        return $this->belongsTo(VehicleModel::class);
     }
 
     public function version(){
-        return $this->hasOne(Version::class);
+        return $this->belongsTo(Version::class);
     }
 
 }

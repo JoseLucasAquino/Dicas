@@ -29,7 +29,7 @@ class ClueFactory extends Factory
             'user_id' => $user->id,
             'type_id' => $type->id,
             'brand_id' => $brand->id,
-            'vehiclemodel_id' => $vehicleModel->id,
+            'vehicle_model_id' => $vehicleModel->id,
             'version_id' => $version->id
         ];
     }

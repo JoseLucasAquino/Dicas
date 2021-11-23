@@ -16,10 +16,12 @@ class CreateCluesTable extends Migration
         Schema::create('clues', function (Blueprint $table) {
             $table->id();
             $table->string('description');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedTinyInteger('type_id');
             $table->unsignedInteger('brand_id');
             $table->unsignedInteger('vehicle_model_id');
             $table->unsignedInteger('version_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('type_id')->references('id')->on('types');
             $table->foreign('brand_id')->references('id')->on('brands');
             $table->foreign('vehicle_model_id')->references('id')->on('vehicle_models');

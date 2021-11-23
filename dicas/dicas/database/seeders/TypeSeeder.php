@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Brand;
 use App\Models\Type;
+use App\Models\VehicleModel;
 use Illuminate\Database\Seeder;
 
 class TypeSeeder extends Seeder
@@ -15,7 +17,7 @@ class TypeSeeder extends Seeder
     public function run()
     {
         Type::factory()
-            ->hasBrands(2)
+            ->has(Brand::factory()->count(20)->has(VehicleModel::factory()->count(4)->hasVersions(3)))
             ->create();
     }
 }
