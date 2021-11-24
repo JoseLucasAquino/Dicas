@@ -2,8 +2,6 @@
 
 namespace App\View\Components;
 
-use App\Models\Brand;
-use App\Models\Type;
 use Illuminate\View\Component;
 
 class Table extends Component

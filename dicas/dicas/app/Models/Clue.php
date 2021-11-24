@@ -26,7 +26,7 @@ class Clue extends Model
     }
 
     public function vehiclemodel(){
-        return $this->belongsTo(VehicleModel::class);
+        return $this->belongsTo(VehicleModel::class, 'vehicle_model_id');
     }
 
     public function version(){

@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link href="{{ asset('css/black-dashboard.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/validate.css') }}" rel="stylesheet" />
+        @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -40,5 +41,6 @@
                 {{ $slot }}
             </main>
         </div>
+    @livewireScripts
     </body>
 </html>
