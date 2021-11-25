@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Clue;
 use Illuminate\Support\Facades\Route;
 
 /*
