@@ -1,14 +1,4 @@
 <div class="table table-responsive">
-    <div class="w-full relative">
-        <div class="w-3/6 relative mx-1">
-            <select wire:model="user" class="block appearance-none w-full bg-gray-300 border border-gray-400 text-gray-800 py-3 px-4 pr-0 rounded leading-tight focus:outline-none">
-                <option value="0" selected>Usuário</option>
-                @foreach($users as $user)
-                    <option value="{{ $user->id }}">{{ $user->name }}</option>
-                @endforeach
-            </select>
-        </div>
-    </div>
     <table class="table table-striped table-hover table-dark">
         <thead>
         <tr>
@@ -18,6 +8,27 @@
             <th>Marca</th>
             <th>Modelo</th>
             <th>Versão</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>
+                <select wire:model="search.type_id" class="block appearance-none w-full bg-gray-300 border border-gray-400 text-gray-800 py-3 px-4 pr-0 rounded leading-tight focus:outline-none">
+                    <option value="" selected>Todos</option>
+                    @foreach($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->description }}</option>
+                    @endforeach
+                </select>
+            </th>
+            <th>
+                <input type="text" wire:model.debounce.200ms="search.brand" placeholder="Marca" class="form-control">
+            </th>
+            <th>
+                <input type="text" wire:model.debounce.200ms="search.vehiclemodel" placeholder="Modelo" class="form-control">
+            </th>
+            <th>
+                <input type="text" wire:model.debounce.200ms="search.version" placeholder="Versão" class="form-control">
+            </th>
         </tr>
         </thead>
         <tbody>

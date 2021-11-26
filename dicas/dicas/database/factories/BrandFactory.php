@@ -14,7 +14,7 @@ class BrandFactory extends Factory
     public function definition()
     {
         return [
-            'description' => $this->faker->lexify('????? Motors')
+            'description' => $this->faker->lexify('????? Motors'),
         ];
     }
 }

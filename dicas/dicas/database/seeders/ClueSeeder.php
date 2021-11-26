@@ -15,7 +15,7 @@ class ClueSeeder extends Seeder
     public function run()
     {
         Clue::factory()
-            ->count(4)
+            ->count(30)
             ->create();
     }
 }

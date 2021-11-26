@@ -6,6 +6,7 @@ use App\Models\Brand;
 use App\Models\Type;
 use App\Models\VehicleModel;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TypeSeeder extends Seeder
 {

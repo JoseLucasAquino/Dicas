@@ -20,9 +20,9 @@ class ClueFactory extends Factory
     {
         $user = $this->faker->randomElement(User::all());
         $type = $this->faker->randomElement(Type::all());
-        $brand = $type->brands()->first();//$this->faker->randomElement($type->brands()->get());
-        $vehicleModel = $brand->vehicleModels()->first();//$this->faker->randomElement($brand->vehicleModels());
-        $version = $vehicleModel->versions()->first();//$this->faker->randomElement($vehicleModel->versions()->get());
+        $brand = $type->brands()->inRandomOrder()->first();//$this->faker->randomElement($type->brands()->get());
+        $vehicleModel = $brand->vehicleModels()->inRandomOrder()->first();//$this->faker->randomElement($brand->vehicleModels());
+        $version = $vehicleModel->versions()->inRandomOrder()->first();//$this->faker->randomElement($vehicleModel->versions()->get());
 
         return [
             'description' => $this->faker->realText(200, 2),
