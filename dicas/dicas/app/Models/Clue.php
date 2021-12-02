@@ -9,7 +9,7 @@ class Clue extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['description', 'user_id', 'type_id', 'brand_id', 'vehiclemodel_id', 'version_id'];
+    protected $fillable = ['description', 'user_id', 'type_id', 'brand_id', 'vehicle_model_id', 'version_id'];
     public $labels = ['Descrição', 'Usuário', 'Tipo', 'Marca', 'Modelo', 'Versão'];
     public $visible = ['description', 'user', 'type', 'brand', 'vehiclemodel', 'version'];
 

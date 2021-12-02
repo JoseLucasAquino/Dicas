@@ -26,9 +26,9 @@ class ClueController extends Controller
      */
     public function create()
     {
-        $action = Route('clues.store');
         $title = 'Cadastro de Dica';
-        return view('forms.clues', compact('action', 'title'));
+        $method = 'POST';
+        return view('clue.form', compact( 'title', 'method'));
     }
 
     /**
@@ -39,8 +39,8 @@ class ClueController extends Controller
      */
     public function store(Request $request)
     {
-        Brand::create($request->all());
-        return redirect()->route('brands.index')->with('success', 'Marca cadastrada com sucesso');
+        Clue::create($request->all());
+        return redirect()->route('clues.index')->with('success', 'Dica cadastrada com sucesso');
     }
 
     /**

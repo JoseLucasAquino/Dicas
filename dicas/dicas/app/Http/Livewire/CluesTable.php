@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Clue;
 use App\Models\Type;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -16,7 +17,7 @@ class CluesTable extends Component
     public $search = ['type_id' => '', 'brand' => '', 'vehiclemodel' => '', 'version' => ''];
     public function render()
     {
-        $clues = Clue::query();
+        $clues = Auth::check() ? Clue::query()->where('user_id', '=', Auth::user()->id) : Clue::query();
         $clues = $this->applySearch($clues);
         return view('livewire.clues-table', [
             'clues' => $clues->paginate(5),

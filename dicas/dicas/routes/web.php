@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClueController;
 use App\Models\Clue;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::middleware('auth:web')->group(function () {
+    Route::resource('clues', ClueController::class);
 });
 
 Route::get('/dashboard', function () {

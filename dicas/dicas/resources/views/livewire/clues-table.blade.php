@@ -1,4 +1,4 @@
-<div class="table table-responsive">
+<div class="table table-responsive rounded">
     <table class="table table-striped table-hover table-dark">
         <thead>
         <tr>
@@ -39,7 +39,7 @@
                 <td>{{ $clue->type->description }}</td>
                 <td>{{ $clue->brand->description }}</td>
                 <td>{{ $clue->vehiclemodel->description }}</td>
-                <td>{{ $clue->version->description }}</td>
+                <td>{{ $clue->version->description ?? '' }}</td>
             </tr>
         @empty
             <tr><td>No data records</td></tr>
