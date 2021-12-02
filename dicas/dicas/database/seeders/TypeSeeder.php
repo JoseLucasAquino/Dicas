@@ -18,6 +18,7 @@ class TypeSeeder extends Seeder
     public function run()
     {
         Type::factory()
+            ->count(3)
             ->has(Brand::factory()->count(20)->has(VehicleModel::factory()->count(4)->hasVersions(3)))
             ->create();
     }
