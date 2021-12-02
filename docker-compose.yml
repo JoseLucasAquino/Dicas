@@ -10,6 +10,10 @@ services:
       - db-dicas
     ports:
       - 8188:80
+    environment:
+      MYSQL_DATABASE: dicasauto
+      MYSQL_USER: admindicas
+      MYSQL_PASSWORD: secret
   db-dicas:
     container_name: dbdicas
     restart: always
