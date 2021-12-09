@@ -25,7 +25,7 @@ class CluesTable extends Component
         ]);
     }
 
-    public function updateSearch(){
+    public function updatingSearch(){
         $this->resetPage();
     }
 
